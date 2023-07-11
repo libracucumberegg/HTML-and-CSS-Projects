@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Cosmic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/opw.js"></script>
 </head>
 <body>
 <div>
@@ -25,21 +27,75 @@
     <h2 id="gallery">Gallery</h2>
 
     <div>
-        <h3>Videos</h3>
-        <iframe width="727" height="409" src="https://www.youtube.com/embed/Un5SEJ8MyPc" title="A Space Journey (HD)"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+        <div class="row">
+            <div class="col">
+                <img src="https://img.youtube.com/vi/Un5SEJ8MyPc/hqdefault.jpg" onclick="openLightbox();toSlide(1)" class="hover-shadow preview" alt="">
+            </div>
+            <div class="col">
+                <img src="https://img.youtube.com/vi/XO3vCe0sqfs/hqdefault.jpg" onclick="openLightbox();toSlide(2)" class="hover-shadow preview" alt="">
+            </div>
+            <div class="col">
+                <img src="./images/image.png" onclick="openLightbox();toSlide(3)" class="hover-shadow preview" alt="">
+            </div>
+            <div class="col">
+                <img src="./images/image2.png" onclick="openLightbox();toSlide(4)" class="hover-shadow preview" alt="">
+            </div>
+        </div>
 
-        <iframe width="727" height="409" src="https://www.youtube.com/embed/XO3vCe0sqfs"
-                title="Ascent. Space visuals, Chillout Music"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-    </div>
+        <!-- The Modal/Lightbox -->
+        <div id="Lightbox" class="modal">
+            <span class="close pointer" onclick="closeLightbox()">&times;</span>
+            <div class="modal-content">
 
-    <div>
-        <h3>Images</h3>
-        <img src="images/image.png" alt="Image failed to load">
-        <img src="images/image2.png" alt="Image failed to load">
+                <div class="slide">
+                    <div class="numbertext">1/4</div>
+                    <iframe width="727" height="409" src="https://www.youtube.com/embed/Un5SEJ8MyPc" title="A Space Journey (HD)"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
+
+                <div class="slide">
+                    <div class="numbertext">2/4</div>
+                    <iframe width="727" height="409" src="https://www.youtube.com/embed/XO3vCe0sqfs"
+                            title="Ascent. Space visuals, Chillout Music"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
+
+                <div class="slide">
+                    <div class="numbertext">3/4</div>
+                    <img src="images/image.png" alt="Image failed to load">
+                </div>
+
+                <div class="slide">
+                    <div class="numbertext">4/4</div>
+                    <img src="images/image2.png" alt="Image failed to load">
+                </div>
+
+                <!-- Next/previous controls -->
+                <a class="previous" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+                <!-- Thumbnail image controls -->
+                <div class="dots">
+                    <div class="col">
+                        <img class="modal-preview hover-shadow" src="https://img.youtube.com/vi/Un5SEJ8MyPc/hqdefault.jpg" onclick="toSlide(1)" alt="Space">
+                    </div>
+
+                    <div class="col">
+                        <img class="modal-preview hover-shadow" src="https://img.youtube.com/vi/XO3vCe0sqfs/hqdefault.jpg" onclick="toSlide(2)" alt="more space">
+                    </div>
+
+                    <div class="col">
+                        <img class="modal-preview hover-shadow" src="./images/image.png" onclick="toSlide(3)" alt="space but a lot">
+                    </div>
+
+                    <div class="col">
+                        <img class="modal-preview hover-shadow" src="./images/image2.png" onclick="toSlide(4)" alt="many space">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
